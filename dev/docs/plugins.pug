@@ -1,0 +1,107 @@
+include _mixins.pug
+
++page("plugins")
+  p There are some plugins that I advice you to use with awsm.css.
+
+  section
+    +h("fotorama") Fotorama
+
+    p
+      | It's simple and powerful jQuery gallery by Artem Polikarpov. Homepage of the plugin —
+      = ' '
+      a(href="http://fotorama.io/", title="Fotorama") fotorama.io
+      | .
+      | Demo:
+
+    .fotorama(data-width="700", data-ratio="700/467", data-max-width="100%")
+      - var ids = [1, 2, 9, 6, 5];
+
+      each id in ids
+        img(src="http://s.fotorama.io/okonechnikov/" + id + "-lo.jpg", alt="Example image")
+
+    p
+      | Photos
+      = ' '
+      a(href="http://okonet.ru/") by Andrey Okonetchnikov
+
+  section
+    +h("highlightjs-prismjs") highlight.js & prism.js
+
+    p
+      | The best syntax highlight libraries. First of them has more themes, but sometimes second works better.
+      | Which one to use? Up to you.
+
+    p
+      | Homepages:
+      = ' '
+      a(href="https://highlightjs.org/", title="highlight.js") highlightjs.org
+      = ' '
+      | &
+      = ' '
+      a(href="http://prismjs.com/", title="http://prism.js") prismjs.com
+      | .
+      | Demo of prism.js you can see below.
+
+    pre
+      code.language-scss
+        -
+          var code = '@import \'mixins\';\n' +
+            '@import \'variables\';\n' +
+            '\n' +
+            '//- Basic\n' +
+            '\n' +
+            'html {\n' +
+            '  font-family: font(\'serif\');\n' +
+            '  font-size: 100%;\n' +
+            '  line-height: size(\'line-height-max\');\n' +
+            '  background: color(\'secondary\');\n' +
+            '  color: color(\'primary\');\n' +
+            '  -webkit-overflow-scrolling: touch;\n' +
+            '}';
+
+        = code
+
+  section
+    +h("zoomjs") ZOOM.JS
+
+    p
+      | It's a pure JavaScript image zooming plugin; as seen on
+      = ' '
+      a(
+        href="https://medium.design/image-zoom-on-medium-24d146fc0c20",
+        title="Article “Image zoom – Designing Medium”",
+        target="_blank"
+      ) Medium.com
+      = '. '
+      | Check the demo below (click to the image).
+      = ' '
+      a(
+        href="https://github.com/nishanths/zoom.js",
+        title="Project on the GitHub",
+        target="_blank"
+      ) Homepage
+      | .
+
+    img(src="images/zoom.js.jpeg", alt="Beautiful photo of buildings in a city", data-action="zoom")
+
+  script(src="https://code.jquery.com/jquery-1.10.2.min.js")
+
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.min.js")
+  link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.min.css")
+
+  link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/themes/prism-solarizedlight.min.css")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/prism.min.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/components/prism-scss.min.js")
+
+  script(src="https://unpkg.com/@nishanths/zoom.js@2.0.1/dist/zoom.min.js")
+  link(rel="stylesheet", href="https://unpkg.com/@nishanths/zoom.js@2.0.1/css/zoom.css")
+
+  style.
+    /* move prism.js paddings from pre to code */
+    pre[class*=language-] {
+      padding: 0;
+    }
+
+    pre[class*=language-] code {
+      padding: 1em;
+    }

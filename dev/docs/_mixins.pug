@@ -1,0 +1,68 @@
+include _docmap.pug
+
+mixin page(name)
+  - var info = docmap[name]
+
+  doctype html
+  html(lang="en")
+    head
+      meta(charset="utf-8")
+      meta(name="viewport", content="width=device-width, initial-scale=1.0")
+      title= info.pageTitle ? info.pageTitle : info.title
+      link(rel="stylesheet", href="css/awsm.min.css")
+      link(href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i", rel="stylesheet")
+
+      //- Stuff for social networks
+      meta(property="og:title", content= info.pageTitle ? info.pageTitle : 'awsm.css: ' + info.title)
+      meta(property="og:description", content= info.description)
+      meta(property="og:image", content="https://igoradamenko.github.io/awsm.css/images/cover.png")
+      meta(property="og:url", content="https://igoradamenko.github.io/awsm.css/" + (info.url === 'index.html' ? '' : info.url))
+      meta(name="twitter:card", content="summary_large_image")
+      meta(name="twitter:creator", content="@igoradamenko")
+
+    body
+      header
+        h1 awsm.css
+        p
+          | It makes your
+          = ' '
+          abbr(title="HyperText Markup Language is the standard markup language for creating web pages and web applications.") HTML
+          = ' '
+          | beautiful
+
+        nav
+          ul
+            - for (var item in docmap)
+              - if (item != name)
+                li
+                  a(href= docmap[item].url, target= docmap[item].blank ? '_blank' : false)= docmap[item].title
+              - else
+                li= docmap[item].title
+
+      main
+        article
+          if docmap[name].header
+            h1= docmap[name].title
+
+          block
+
+      footer
+        p Igor Adamenko
+
+mixin code-block
+  pre
+    code
+      block
+
+mixin h(id, level, skipAnchor)
+  - var tag = level ? 'h' + level : 'h2'
+
+  #{tag}
+    if id && !skipAnchor
+      a(
+        id= id,
+        href= "#" + id,
+        aria-hidden="true"
+      )
+
+    block
