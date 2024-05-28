@@ -8,6 +8,9 @@
     "gulp-watch": "^5.0.1",
     "sass": "^1.77.2"
   },
-  "scripts": {},
+  "scripts": {
+    "watch": "gulp watch",
+    "build": "gulp sass"
+  },
   "license": "MIT"
 }
