@@ -1,54 +1,13 @@
 {
-  "name": "awsm.css",
+  "name": "amzng.css",
   "version": "2.1.0",
   "description": "Simple CSS lib for semantic HTML markup",
-  "author": "Igor Adamenko <mail@igoradamenko.com> (http://igoradamenko.com)",
-  "main": "index.js",
   "devDependencies": {
-    "autoprefixer": "^7.1.1",
-    "browser-sync": "^2.18.5",
-    "del": "^2.2.2",
-    "gulp": "github:gulpjs/gulp#4.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-csso": "^3.0.0",
-    "gulp-filter": "^5.0.0",
-    "gulp-load-plugins": "^1.4.0",
-    "gulp-notify": "^3.0.0",
-    "gulp-plumber": "^1.1.0",
-    "gulp-postcss": "^7.0.0",
-    "gulp-pug": "^3.2.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.0.0",
-    "gulp-stylelint": "^3.9.0",
-    "gulp-util": "^3.0.8",
-    "postcss": "^6.0.1",
-    "postcss-discard-comments": "^2.0.4",
-    "stylelint-no-unsupported-browser-features": "^1.0.0",
-    "stylelint-order": "^0.4.4",
-    "stylelint-scss": "^1.4.1",
-    "stylelint-selector-no-utility": "^1.5.0"
+    "gulp": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-watch": "^5.0.1",
+    "sass": "^1.77.2"
   },
-  "scripts": {
-    "build": "./node_modules/.bin/gulp build",
-    "clean": "./node_modules/.bin/gulp clean",
-    "dev": "./node_modules/.bin/gulp",
-    "lint": "./node_modules/.bin/gulp lint",
-    "test": "npm run build"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/igoradamenko/awsm.css.git"
-  },
-  "bugs": {
-    "url": "https://github.com/igoradamenko/awsm.css/issues",
-    "email": "mail@igoradamenko.com"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org"
-  },
-  "files": [
-    "index.js",
-    "dist"
-  ]
+  "scripts": {},
+  "license": "MIT"
 }

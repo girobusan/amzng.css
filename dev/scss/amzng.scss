@@ -2,6 +2,7 @@
 @import 'variables';
 
 //- Basic
+//
 
 html {
   font-family: font('serif');
@@ -22,7 +23,7 @@ body {
     // source: https://www.smashingmagazine.com/2016/05/fluid-typography/
     $font-size-diff: size('font-max') - size('font-min');
     $width-diff: size('width-max') - size('width-min');
-    $ratio: $font-size-diff / $width-diff;
+    $ratio: calc( $font-size-diff / $width-diff );
 
     font-size: calc(#{size('font-min')} + #{$ratio} * (100vw - #{size('width-min')}));
   }
