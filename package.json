@@ -2,10 +2,17 @@
   "name": "amzng.css",
   "version": "2.1.0",
   "description": "Simple CSS lib for semantic HTML markup",
+  "browserslist": [
+    ">0.1%",
+    "maintained node versions"
+  ],
   "devDependencies": {
+    "autoprefixer": "^10.4.19",
     "gulp": "^5.0.0",
+    "gulp-postcss": "^10.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-watch": "^5.0.1",
+    "postcss": "^8.4.38",
     "sass": "^1.77.2"
   },
   "scripts": {

@@ -23,7 +23,7 @@
   "footer": "&lt;small&gt;Powered by &lt;a href='https://github.com/girobusan/imp'&gt;IMP!&lt;/a&gt; ",
   "css": "\n  ",
   "headHTML": "&lt;script src=\"styleswitch.js\" defer &gt;&lt;/script&gt;\n&lt;link rel=\"stylesheet\" href=\"styleswitch.css\" /&gt;",
-  "editor": "",
+  "editor": "https://cdn.jsdelivr.net/gh/girobusan/imp@latest/dist/imp.js",
   "viewCSS": "amzng.css",
   "author": "",
   "keywords": "",
@@ -38,7 +38,7 @@
    console.info("Loading editor...")
    const editor = document.createElement("script");
    editor.id="editorScript";
-   editor.src="imp.js";
+   editor.src="https://cdn.jsdelivr.net/gh/girobusan/imp@latest/dist/imp.js";
    document.head.appendChild(editor);
    }
    window.addEventListener("DOMContentLoaded" , function(){
@@ -70,9 +70,7 @@
 <link rel="stylesheet" href="styleswitch.css" />
 </head>
 <body>
-<main class='container' id='pageMain'><div id="cssSwitcher" style="position: fixed; bottom: 16px ; left: 16px; padding: 8px;z-index:1000"></div>
-<p><a href="index.html"> 🎨 IMP! Themes site</a></p>
-<h1>IMP! Themes sampler: <span id="themeName">test the themes!</span> </h1>
+<main class='container' id='pageMain'><h1>IMP! Themes sampler: <span id="themeName">test the themes!</span> </h1>
 <h2>Change theme by using form in lower left corner of this page</h2>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <a href="yandex.com">Ut enim ad</a> minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor <code>in reprehenderit in voluptate velit</code> esse cillum dolore eu fugiat nulla pariatur. <em>Excepteur</em> sint occaecat cupidatat <strong>non proident,</strong> sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 <ul>
@@ -88,8 +86,8 @@
 </ol>
 <h2>List with checkboxes</h2>
 <ul>
-<li><input type="checkbox" id="checkbox100" checked="true"><label for="checkbox100">Checkboxes</label></li>
-<li><input type="checkbox" id="checkbox101"><label for="checkbox101">As usual</label></li>
+<li><input type="checkbox" id="checkbox28" checked="true"><label for="checkbox28">Checkboxes</label></li>
+<li><input type="checkbox" id="checkbox29"><label for="checkbox29">As usual</label></li>
 </ul>
 <h2>Heding level 2</h2>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -158,11 +156,7 @@ sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 </main>
 <footer id="pageFooter"><small>Powered by <a href='https://github.com/girobusan/imp'>IMP!</a> </footer>
 <script>window.impData={}</script>
-<script id="pageData" type="text/markdown">&lt;div id="cssSwitcher" style="position: fixed; bottom: 16px ; left: 16px; padding: 8px;z-index:1000"&gt;&lt;/div&gt;
-
-[ :art: IMP! Themes site](index.html)
-
-&lt;h1&gt;IMP! Themes sampler: &lt;span id="themeName"&gt;test the themes!&lt;/span&gt; &lt;/h1&gt;
+<script id="pageData" type="text/markdown">&lt;h1&gt;IMP! Themes sampler: &lt;span id="themeName"&gt;test the themes!&lt;/span&gt; &lt;/h1&gt;
 	
 ## Change theme by using form in lower left corner of this page
 

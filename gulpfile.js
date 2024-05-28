@@ -1,4 +1,6 @@
 const gulp = require('gulp');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
 const sass = require('gulp-sass')(require('sass'));
 const compiler = require('sass');
 
@@ -7,6 +9,9 @@ sass.compiler = compiler;
 gulp.task('sass',function() {
     return gulp.src('./dev/scss/*.scss')
       .pipe(sass().on('error', sass.logError))
+      .pipe( postcss( [ 
+        autoprefixer(),
+        ] ) )
       .pipe(gulp.dest('./css'));
   });
 

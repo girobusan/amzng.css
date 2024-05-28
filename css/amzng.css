@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 html {
   font-family: "PT Serif", Georgia, serif;
   font-size: 100%;
@@ -124,7 +125,9 @@ p,
 main > div,
 main article > div {
   margin: 1em auto;
-  hyphens: auto;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
 p:first-child,
 main > div:first-child,
@@ -316,7 +319,9 @@ a:hover {
 
 abbr {
   margin-right: -0.075em;
-  hyphens: none;
+  -webkit-hyphens: none;
+      -ms-hyphens: none;
+          hyphens: none;
   letter-spacing: 0.075em;
   font-size: 0.9em;
 }
