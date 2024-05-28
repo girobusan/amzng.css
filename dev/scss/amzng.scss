@@ -19,6 +19,7 @@ html {
 body {
   margin: 0;
   padding: 0;
+  padding-top: 1px;
   font-size: size('font-min');
   *{
     box-sizing: border-box;
@@ -45,6 +46,8 @@ body {
     position: relative;
     // max-width: size('width-max');
     margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   > header {
@@ -72,13 +75,14 @@ body {
 }
 //max-width for block elements
 main , main article {
-  padding: 0 1rem;
+  padding: 1px 1rem;
   h1,h2,h3,h4,h5,h6,
   p, &>div ,
   blockquote, audio , video,
   ul,ol,dl,
   form, figure, address,
   pre, //?
+  picture
 
   {
     margin-left:auto;
@@ -107,6 +111,8 @@ p img + em
 
 body > footer > *{
 max-width: size('width-max');
+margin-left: auto;
+margin-right: auto;
 }
 
 nav {
@@ -375,14 +381,14 @@ abbr {
 
 img, picture {
   display: block;
-  max-width: 100%;
-  margin: 0 auto;
+  // max-width: 100%;
+  // margin: 0 auto;
 }
 
-audio, video {
-  width: 100%;
-  max-width: 100%;
-}
+// audio, video {
+//   width: 100%;
+//   max-width: 100%;
+// }
 
 video {
   object-position: 0 -1px; // fix strange chrome video controls rendering
