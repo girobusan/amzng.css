@@ -1,5 +1,65 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+
+code.hljs {
+  padding: 3px 5px;
+}
+
+.hljs {
+  color: #383a42;
+  background: #fafafa;
+}
+
+.hljs-comment, .hljs-quote {
+  color: #a0a1a7;
+  font-style: italic;
+}
+
+.hljs-doctag, .hljs-formula, .hljs-keyword {
+  color: #a626a4;
+}
+
+.hljs-deletion, .hljs-name, .hljs-section, .hljs-selector-tag, .hljs-subst {
+  color: #e45649;
+}
+
+.hljs-literal {
+  color: #0184bb;
+}
+
+.hljs-addition, .hljs-attribute, .hljs-meta .hljs-string, .hljs-regexp, .hljs-string {
+  color: #50a14f;
+}
+
+.hljs-attr, .hljs-number, .hljs-selector-attr, .hljs-selector-class, .hljs-selector-pseudo, .hljs-template-variable, .hljs-type, .hljs-variable {
+  color: #986801;
+}
+
+.hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-symbol, .hljs-title {
+  color: #4078f2;
+}
+
+.hljs-built_in, .hljs-class .hljs-title, .hljs-title.class_ {
+  color: #c18401;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: 700;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
 html {
   font-family: "PT Serif", Georgia, serif;
   font-size: 100%;
@@ -78,9 +138,15 @@ main article picture {
 }
 
 p img {
+  display: block;
   margin-left: 50%;
   transform: translateX(-50%);
   max-width: calc(100vw - 2rem);
+}
+p img.fit {
+  transform: none;
+  margin: 0 auto;
+  max-width: 100%;
 }
 
 p img + small,
@@ -211,7 +277,7 @@ h1:hover > a[href^="#"][id], h1:focus > a[href^="#"][id], h2:hover > a[href^="#"
   opacity: 1;
   transition: opacity 0s, color 300ms ease-out;
 }
-h1 + p, h1 + details, h2 + p, h2 + details, h3 + p, h3 + details, h4 + p, h4 + details, h5 + p, h5 + details, h6 + p, h6 + details {
+h1 + p, h1 + details, h1 + ul, h1 + ol, h1 + dl, h1 + video, h1 + audio, h2 + p, h2 + details, h2 + ul, h2 + ol, h2 + dl, h2 + video, h2 + audio, h3 + p, h3 + details, h3 + ul, h3 + ol, h3 + dl, h3 + video, h3 + audio, h4 + p, h4 + details, h4 + ul, h4 + ol, h4 + dl, h4 + video, h4 + audio, h5 + p, h5 + details, h5 + ul, h5 + ol, h5 + dl, h5 + video, h5 + audio, h6 + p, h6 + details, h6 + ul, h6 + ol, h6 + dl, h6 + video, h6 + audio {
   margin-top: 0.5em;
 }
 h1 > a[href^="#"][id], h2 > a[href^="#"][id], h3 > a[href^="#"][id], h4 > a[href^="#"][id], h5 > a[href^="#"][id], h6 > a[href^="#"][id] {
@@ -237,6 +303,9 @@ h1 > a[href^="#"][id]::before, h2 > a[href^="#"][id]::before, h3 > a[href^="#"][
 
 h1 {
   font-size: 2em;
+}
+h1:first-child {
+  margin-top: 8rem;
 }
 
 h2 {
@@ -271,6 +340,9 @@ article header p {
 }
 article header p + h1, article header p + h2 {
   margin-top: -0.25em;
+}
+article header p:empty {
+  display: none;
 }
 article header h1 + p, article header h2 + p {
   margin-top: 0.25em;
@@ -422,15 +494,16 @@ code, kbd, var, samp {
 }
 
 pre {
-  padding: 0.5rem;
   overflow-x: auto;
   background: linear-gradient(rgba(68, 68, 68, 0.15) 0%, rgba(68, 68, 68, 0.15) 100%) 0 0, linear-gradient(rgba(68, 68, 68, 0.15) 0%, rgba(68, 68, 68, 0.15) 100%) 100% 0;
   background-attachment: scroll, scroll;
   background-size: 1px 100%, 1px 100%;
   background-repeat: no-repeat, no-repeat;
+  background-color: #fdfaf1;
 }
 pre > code {
   display: inline-block;
+  padding: 1rem;
   overflow-x: visible;
   box-sizing: border-box;
   background-color: transparent;

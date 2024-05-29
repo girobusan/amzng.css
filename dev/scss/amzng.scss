@@ -1,6 +1,8 @@
 @import 'mixins';
 @import 'variables';
+@import './atom-one-light.min.scss';
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
 //- Basic
 //
@@ -94,9 +96,15 @@ main , main article {
 //full size image
  
 p img{
+  display: block;
   margin-left: 50%;
   transform: translateX(-50%);
   max-width: calc(100vw - 2rem);
+  &.fit{
+    transform: none;
+    margin: 0 auto;
+    max-width: 100%;
+  }
 
 }
 // caption-line thing
@@ -247,7 +255,7 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
-  + p, + details {
+  + p, + details , +ul , +ol , +dl , +video , +audio{
     margin-top: .5em;
   }
 
@@ -278,6 +286,9 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 2em;
+  &:first-child{
+    margin-top: 8rem;
+  }
 }
 
 h2 {
@@ -315,6 +326,9 @@ article {
 
       + h1, + h2 {
         margin-top: -.25em;
+      }
+      &:empty{
+        display: none;
       }
     }
 
@@ -494,7 +508,7 @@ code, kbd, var, samp {
 
 pre {
   $scrollBorderColor: rgba(color('primary'), .15);
-  padding: 0.5rem;
+  // padding: 0.5rem;
 
   overflow-x: auto;
   // font-size: .8em;
@@ -504,9 +518,11 @@ pre {
   background-attachment: scroll, scroll;
   background-size: 1px 100%, 1px 100%;
   background-repeat: no-repeat, no-repeat;
+background-color: #fdfaf1;
 
   > code {
     display: inline-block;
+    padding: 1rem;
     overflow-x: visible;
     box-sizing: border-box;
     background-color: transparent;

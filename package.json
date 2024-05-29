@@ -6,6 +6,16 @@
     ">0.1%",
     "maintained node versions"
   ],
+  "cssnano": {
+    "preset": [
+      "default",
+      {
+        "discardComments": {
+          "removeAll": true
+        }
+      }
+    ]
+  },
   "devDependencies": {
     "autoprefixer": "^10.4.19",
     "gulp": "^5.0.0",
@@ -19,5 +29,8 @@
     "watch": "gulp watch",
     "build": "gulp sass"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "cssnano": "^7.0.1"
+  }
 }
