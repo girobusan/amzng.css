@@ -12,7 +12,7 @@ gulp.task('sass',function() {
       .pipe(sass().on('error', sass.logError))
       .pipe( postcss( [ 
         autoprefixer(),
-        // cssnano
+        cssnano
         ] ) )
       .pipe(gulp.dest('./css'));
   });

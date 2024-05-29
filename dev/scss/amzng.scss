@@ -285,7 +285,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 2.25em;
   &:first-child{
     margin-top: 8rem;
   }
@@ -518,7 +518,7 @@ pre {
   background-attachment: scroll, scroll;
   background-size: 1px 100%, 1px 100%;
   background-repeat: no-repeat, no-repeat;
-background-color: #fdfaf1;
+  background-color: #fdfaf1;
 
   > code {
     display: inline-block;
