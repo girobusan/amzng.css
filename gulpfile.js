@@ -1,22 +1,22 @@
-const gulp = require('gulp');
-var postcss = require('gulp-postcss');
-var cssnano = require( 'cssnano' );
-var autoprefixer = require('autoprefixer');
-const sass = require('gulp-sass')(require('sass'));
-const compiler = require('sass');
+const { src, dest, watch, series } = require("gulp");
+var rename = require("gulp-rename");
+const sass = require("gulp-sass")(require("sass"));
 
-sass.compiler = compiler;
+async function buildCSS() {
+  return src("dev/scss/amzng.scss")
+    .pipe(sass().on("error", sass.logError))
+    .pipe(dest("css/"));
+}
 
-gulp.task('sass',function() {
-    return gulp.src('./dev/scss/*.scss')
-      .pipe(sass().on('error', sass.logError))
-      .pipe( postcss( [ 
-        autoprefixer(),
-        cssnano
-        ] ) )
-      .pipe(gulp.dest('./css'));
-  });
+async function buildDist() {
+  return (
+    src("dev/scss/amzng.scss")
+      .pipe(sass({ style: "compressed" }).on("error", sass.logError))
+      // .pipe(rename("amzng.min.css"))
+      .pipe(dest("css/"))
+  );
+}
 
-gulp.task('watch', function(){
-  gulp.watch('./dev/scss/**/*.scss', gulp.series('sass')); 
-})
+exports.css = buildCSS;
+exports.dist = buildDist;
+exports.watch = watch("dev/scss/*.scss", buildCSS);

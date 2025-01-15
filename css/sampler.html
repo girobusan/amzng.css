@@ -17,22 +17,15 @@
    window.settings = {
   "title": "IMP! Themes Sampler",
   "description": "Imp themes sampler",
-  "image": "",
-  "icon": "",
   "filename": "sampler.html",
   "footer": "&lt;div&gt;Powered by &lt;a href='https://github.com/girobusan/imp'&gt;IMP!&lt;/a&gt; &lt;/div&gt;",
-  "css": "\n  ",
   "headHTML": "&lt;script src=\"styleswitch.js\" defer &gt;&lt;/script&gt;\n&lt;link rel=\"stylesheet\" href=\"styleswitch.css\" /&gt;",
   "editor": "https://cdn.jsdelivr.net/gh/girobusan/imp@latest/dist/imp.js",
-  "viewCSS": "amzng.css",
-  "author": "",
-  "keywords": "",
-  "enableHelpers": "",
-  "disableInteractivity": "",
-  "pathToHelpersModule": ""
-}
-   window.savedWithImpVersion = "0.5.0"
+  "viewCSS": "amzng.css"
+};
+   window.savedWithImpVersion = "0.5.3"
   </script>
+
   <script>
    function IMPEdit(){
    console.info("Loading editor...")
@@ -42,7 +35,6 @@
    document.head.appendChild(editor);
    }
    window.addEventListener("DOMContentLoaded" , function(){
-  
    if(window.location.search.indexOf("mode=view")!=-1)
    {
    return;
@@ -59,18 +51,16 @@
    if(window.location.protocol==="file:"){
    IMPEdit();
    }
-  
 })
   </script>
+
   
   <link id = "viewCSS" rel="stylesheet" href="amzng.css">
-  <style id="customCSS">
-  </style>
-  <script src="styleswitch.js" defer ></script>
-<link rel="stylesheet" href="styleswitch.css" />
+  <style id="customCSS"></style>
+  <!--custom html here-->
 </head>
 <body>
-<main class='container' id='pageMain'><h1>IMP! Themes sampler:</h1>
+<main class="container" id="pageMain"><h1>IMP! Themes sampler:</h1>
 <p>velit` esse cillum dolore eu fugiat nulla pariatur. <em>Excepteur</em> sint occaecat cupidatat <strong>non proident,</strong> sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 <h2>Change theme by using form in lower left corner of this page</h2>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <a href="yandex.com">Ut enim ad</a> minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor <code>in reprehenderit in voluptate velit</code> esse cillum dolore eu fugiat nulla pariatur. <em>Excepteur</em> sint occaecat cupidatat <strong>non proident,</strong> sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -98,8 +88,8 @@
 </ul>
 <h2>List with checkboxes</h2>
 <ul>
-<li><input type="checkbox" id="checkbox126" checked="true"><label for="checkbox126">Checkboxes</label></li>
-<li><input type="checkbox" id="checkbox127"><label for="checkbox127">As usual</label></li>
+<li><input type="checkbox" id="checkbox20" checked="true"><label for="checkbox20">Checkboxes</label></li>
+<li><input type="checkbox" id="checkbox21"><label for="checkbox21">As usual</label></li>
 </ul>
 <h2>Heding level 2</h2>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -163,7 +153,7 @@ sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 </blockquote>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-<div style="border:1px solid red;min-height:12px"></div>
+<hr>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 </main>
 <footer id="pageFooter"><div>Powered by <a href='https://github.com/girobusan/imp'>IMP!</a> </div></footer>
@@ -235,7 +225,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-&lt;div style="border:1px solid red;min-height:12px"&gt;&lt;/div&gt;
+&lt;hr&gt;
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</script>
 </body>

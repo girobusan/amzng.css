@@ -1,40 +1,69 @@
+@use "sass:color";
+@use "sass:map";
 //- Maps
 $font-map: (
-  'mono': (Consolas, 'Lucida Console', Monaco, monospace),
-  'serif': ('PT Serif', Georgia, serif),
-  'sans': (system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif),
+  "mono": (Consolas,
+    "Lucida Console",
+    Monaco,
+    monospace,
+  ),
+  "serif": ("PT Serif",
+    Georgia,
+    serif,
+  ),
+  "sans": (system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif,
+  ),
 );
 
 $size-map: (
-  'font-min': 1rem, // 16px
-  'font-max': 1.25rem, // 20px
-  'line-height-min': 1.2,
-  'line-height-max': 1.6,
-  'width-min': 20rem, // 320px / 16px
-  'width-max': 40rem, // 640px / 16px
+  "font-min": 1rem,
+  // 16px
+  "font-max": 1.25rem,
+  // 20px
+  "line-height-min": 1.2,
+  "line-height-max": 1.6,
+  "width-min": 20rem,
+  // 320px / 16px
+  "width-max": 40rem,
+  // 640px / 16px
 );
 
 $color-map: (
-  'primary': #444,
-  'secondary': #fff,
-  'stealthy': #aa9,
-  'invisible': #f2f2f0,
-  'accent': #0064c1,
-  'link': #0064c1,
-  'link-hover': #3000c1,
-  'link-visited': #6d00c1,
-  'alarm': #d00000,
+  "primary": #444,
+  "secondary": rgb(255 255 255),
+  "stealthy": #aa9,
+  "invisible": rgb(230, 230, 230),
+  "accent": #0064c1,
+  "link": #0064c1,
+  "link-hover": #3000c1,
+  "link-visited": #6d00c1,
+  "alarm": #d00000,
 );
 
 //- Functions
 @function font($key) {
-  @return map-get($font-map, $key);
+  @return map.get($font-map, $key);
 }
 
 @function size($key) {
-  @return map-get($size-map, $key);
+  @return map.get($size-map, $key);
 }
 
-@function color($key) {
-  @return map-get($color-map, $key);
+@function a_color($key) {
+  /* @debug rgba(map.get($color-map, $key), 1); */
+  $color: map.get($color-map, $key);
+  @return $color;
 }

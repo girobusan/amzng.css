@@ -1,18 +1,19 @@
-@import 'mixins';
-@import 'variables';
-@import './atom-one-light.min.scss';
-@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@use "sass:color";
+@use "_variables.scss" as *;
+@use "_mixins.scss" as *;
+@use "./atom-one-light.min.scss";
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 // @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
 //- Basic
 //
 
 html {
-  font-family: font('serif');
+  font-family: #{font("serif")};
   font-size: 100%;
-  line-height: size('line-height-max');
-  background: color('secondary');
-  color: color('primary');
+  line-height: size("line-height-max");
+  background: a_color("secondary");
+  color: a_color("primary");
   -webkit-overflow-scrolling: touch;
 }
 
@@ -22,23 +23,23 @@ body {
   margin: 0;
   padding: 0;
   padding-top: 1px;
-  font-size: size('font-min');
-  *{
+  font-size: size("font-min");
+
+  * {
     box-sizing: border-box;
   }
 
-
-  @media (min-width: size('width-min')) {
+  @media (min-width: size("width-min")) {
     // source: https://www.smashingmagazine.com/2016/05/fluid-typography/
-    $font-size-diff: size('font-max') - size('font-min');
-    $width-diff: size('width-max') - size('width-min');
-    $ratio: calc( $font-size-diff / $width-diff );
+    $font-size-diff: size("font-max") - size("font-min");
+    $width-diff: size("width-max") - size("width-min");
+    $ratio: calc($font-size-diff / $width-diff);
 
-    font-size: calc(#{size('font-min')} + #{$ratio} * (100vw - #{size('width-min')}));
+    font-size: calc(#{size("font-min")} + #{$ratio} * (100vw - #{size("width-min")}));
   }
 
-  @media (min-width: size('width-max')) {
-    font-size: size('font-max');
+  @media (min-width: size("width-max")) {
+    font-size: size("font-max");
   }
 
   header,
@@ -52,7 +53,7 @@ body {
     padding-right: 1rem;
   }
 
-  > header {
+  >header {
     margin-bottom: 3.5em;
 
     h1 {
@@ -60,67 +61,81 @@ body {
       font-size: 1.5em;
     }
 
-    p  
-    { 
+    p {
       margin: 0;
-      font-size: .85em;
+      font-size: 0.85em;
     }
   }
 
-  > footer {
+  >footer {
     margin-top: 4.5em;
     padding-bottom: 1.5em;
     text-align: center;
-    font-size: .8rem;
-    color: color('stealthy');
+    font-size: 0.8rem;
+    color: a_color("stealthy");
   }
 }
-//max-width for block elements
-main , main article {
-  padding: 1px 1rem;
-  h1,h2,h3,h4,h5,h6,
-  p, &>div ,
-  blockquote, audio , video,
-  ul,ol,dl,
-  form, figure, address,
-  pre, //?
-  picture
 
-  {
-    margin-left:auto;
-    margin-right:auto;
-    max-width: size('width-max');
-    
+//max-width for block elements
+main,
+main article {
+  padding: 1px 1rem;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  &>div,
+  blockquote,
+  audio,
+  video,
+  ul,
+  ol,
+  dl,
+  form,
+  figure,
+  address,
+  pre,
+  //?
+  picture {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: size("width-max");
   }
 }
+
 //full size image
- 
-p img{
+
+p img {
   display: block;
   margin-left: 50%;
   transform: translateX(-50%);
   max-width: calc(100vw - 2rem);
-  &.fit{
+
+  &.fit {
     transform: none;
     margin: 0 auto;
     max-width: 100%;
   }
-
 }
+
 // caption-line thing
-p img + small ,
-p img + em
-{
+p img+small,
+p img+em {
   display: inline-block;
-  color: lighten( color('primary') , 20% );
+  /* color: a_color("primary_light"); */
+  color: color.adjust(a_color("primary"), $lightness: 20%);
   font-size: 0.8em;
   line-height: 110%;
 }
 
-body > footer > *{
-max-width: size('width-max');
-margin-left: auto;
-margin-right: auto;
+body>footer>* {
+  max-width: size("width-max");
+  margin-left: auto;
+  margin-right: auto;
 }
 
 nav {
@@ -135,36 +150,37 @@ nav {
   li {
     display: inline-block;
     margin-right: 1em;
-    margin-bottom: .25em;
+    margin-bottom: 0.25em;
     //markdown checklist
   }
 
   a {
     &:visited {
-      color: color('link');
+      color: a_color("link");
     }
 
     &:hover {
-      color: color('link-hover');
+      color: a_color("link-hover");
     }
   }
 }
 
-ul, ol {
+ul,
+ol {
   margin-top: 0;
   padding-top: 0;
   padding-left: 2.5em;
 }
-li input[type*=checkbox]{
-        margin-left: -1.5em;
-              margin-right: 1em;
-            }
 
+li input[type*="checkbox"] {
+  margin-left: -1.5em;
+  margin-right: 1em;
+}
 
-p ,
-main > div,  //top-level div
-main article > div
-{
+p,
+main>div,
+//top-level div
+main article>div {
   margin: 1em auto;
   hyphens: auto;
 
@@ -176,16 +192,17 @@ main article > div
     margin-bottom: 0;
   }
 
-  + ul, + ol {
-    margin-top: -.75em;
+  +ul,
+  +ol {
+    margin-top: -0.75em;
   }
 
-// no forced floats
-//  img, picture {   
-//    float: right;
-//    margin-bottom: .5em;
-//    margin-left: .5em;
-//  }
+  // no forced floats
+  //  img, picture {
+  //    float: right;
+  //    margin-bottom: .5em;
+  //    margin-left: .5em;
+  //  }
 
   picture {
     img {
@@ -211,20 +228,21 @@ blockquote {
 }
 
 aside {
-  margin: .5em 0;
+  margin: 0.5em 0;
   font-style: italic;
-  color: color('stealthy');
+  color: a_color("stealthy");
 
   $shift: 12.5rem; // 200px / 16px
-  @media (min-width: size('width-max') + $shift * 2) {
+
+  @media (min-width: size("width-max") + $shift * 2) {
     position: absolute;
     right: -$shift;
-    width: $shift * .75;
-    max-width: $shift * .75;
+    width: $shift * 0.75;
+    max-width: $shift * 0.75;
     margin: 0;
-    padding-left: .5em;
-    font-size: .8em;
-    border-left: 1px solid color('invisible');
+    padding-left: 0.5em;
+    font-size: 0.8em;
+    border-left: 1px solid a_color("invisible");
   }
 
   &:first-child {
@@ -237,41 +255,59 @@ aside {
 }
 
 section {
-  + section {
+  +section {
     margin-top: 2em;
   }
 }
 
 //- Typography
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 1.25em 0 0;
-  line-height: size('line-height-min');
+  line-height: size("line-height-min");
 
-  &:hover, &:focus {
-    > a[href^='#'][id] {
+  &:hover,
+  &:focus {
+    >a[href^="#"][id] {
       opacity: 1;
-      transition: opacity 0s, color 300ms ease-out;
+      transition:
+        opacity 0s,
+        color 300ms ease-out;
     }
   }
 
-  + p, + details , +ul , +ol , +dl , +video , +audio{
-    margin-top: .5em;
+  +p,
+  +details,
+  +ul,
+  +ol,
+  +dl,
+  +video,
+  +audio {
+    margin-top: 0.5em;
   }
 
-  > a[href^='#'][id] {
+  >a[href^="#"][id] {
     position: absolute;
-    left: -.5em;
+    left: -0.5em;
     opacity: 0;
     background: none;
-    color: rgba(color('primary'), .5);
+    color: rgba(a_color("primary"), 0.5);
     transition: opacity 300ms ease-out;
 
-    &:target, &:hover, &:focus {
+    &:target,
+    &:hover,
+    &:focus {
       opacity: 1;
       box-shadow: none;
-      color: color('primary');
-      transition: opacity 0s, color 0s;
+      color: a_color("primary");
+      transition:
+        opacity 0s,
+        color 0s;
     }
 
     &:target:focus {
@@ -279,14 +315,15 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     &::before {
-      content: '•';
+      content: "•";
     }
   }
 }
 
 h1 {
   font-size: 2.25em;
-  &:first-child{
+
+  &:first-child {
     margin-top: 8rem;
   }
 }
@@ -310,66 +347,73 @@ h5 {
 h6 {
   margin-top: 1em;
   font-size: 1em;
-  color: color('stealthy');
+  color: a_color("stealthy");
 }
 
 article {
-  + article {
+  +article {
     margin-top: 5em;
   }
 
   header {
     p {
-      font-family: font('sans');
-      font-size: .6em;
-      color: color('stealthy');
+      font-family: font("sans");
+      font-size: 0.6em;
+      color: a_color("stealthy");
 
-      + h1, + h2 {
-        margin-top: -.25em;
+      +h1,
+      +h2 {
+        margin-top: -0.25em;
       }
-      &:empty{
+
+      &:empty {
         display: none;
       }
     }
 
-    h1, h2 {
-      + p {
-        margin-top: .25em;
+    h1,
+    h2 {
+      +p {
+        margin-top: 0.25em;
       }
 
       a {
-        color: color('primary');
+        color: a_color("primary");
 
-        @include retina-border(color('primary'));
+        @include retina-border(a_color("primary"));
 
         &:visited {
-          color: color('stealthy');
+          color: a_color("stealthy");
 
-          @include retina-border(color('stealthy'));
+          @include retina-border(a_color("stealthy"));
 
           &:hover {
-            color: color('link-hover');
+            color: a_color("link-hover");
           }
         }
       }
     }
   }
 
-  > footer {
+  >footer {
     margin-top: 1.5em;
-    font-size: .85em;
+    font-size: 0.85em;
   }
 }
 
 a {
   text-decoration: none;
-  color: color('link');
-  transition: color 300ms ease-out, box-shadow 300ms ease-out;
+  color: a_color("link");
+  transition:
+    color 300ms ease-out,
+    box-shadow 300ms ease-out;
 
-  @include retina-border(color('link'));
+  @include retina-border(a_color("link"));
 
   &:visited {
-    color: mix(color('link'), color('secondary')); //- we can't use rgba or change background-image in :visited 'cause of security
+    /* color: a_color("link-visited"); */
+    color: color.mix(a_color("link"),
+        a_color("secondary")); //- we can't use rgba or change background-image in :visited 'cause of security
   }
 
   &:hover,
@@ -378,22 +422,25 @@ a {
   }
 
   &:hover {
-    box-shadow: inset 0px -1px color('link-hover');
-    color: color('link-hover');
-    transition: color 0s, box-shadow 0s;
+    box-shadow: inset 0px -1px a_color("link-hover");
+    color: a_color("link-hover");
+    transition:
+      color 0s,
+      box-shadow 0s;
   }
 }
 
 abbr {
-  margin-right: -.075em;
+  margin-right: -0.075em;
   hyphens: none;
-  letter-spacing: .075em;
-  font-size: .9em;
+  letter-spacing: 0.075em;
+  font-size: 0.9em;
 }
 
 //- Media
 
-img, picture {
+img,
+picture {
   display: block;
   // max-width: 100%;
   // margin: 0 auto;
@@ -409,26 +456,26 @@ video {
 }
 
 figure {
-  margin: 1em 0 .5em;
+  margin: 1em 0 0.5em;
   padding: 0;
 
-  + p {
-    margin-top: .5em;
+  +p {
+    margin-top: 0.5em;
   }
 
   figcaption {
-    opacity: .65;
-    font-size: .85em;
+    opacity: 0.65;
+    font-size: 0.85em;
   }
 }
 
 //- Tables
 
 table {
-  $scrollBorderColor: rgba(color('primary'), .15);
+  $scrollBorderColor: rgba(a_color("primary"), 0.15);
   margin-top: 1rem;
   margin-bottom: 1rem;
-  position: relative; 
+  position: relative;
   left: 50%;
   transform: translateX(-50%);
   // margin-left: 50%;
@@ -446,31 +493,36 @@ table {
     linear-gradient($scrollBorderColor 0%, $scrollBorderColor 100%) 0 0,
     linear-gradient($scrollBorderColor 0%, $scrollBorderColor 100%) 100% 0;
   background-attachment: scroll, scroll;
-  background-size: 1px 100%, 1px 100%;
+  background-size:
+    1px 100%,
+    1px 100%;
   background-repeat: no-repeat, no-repeat;
 
-  @media(max-width: 65rem ){
+  @media (max-width: 65rem) {
     margin-left: 0;
     transform: none;
     left: 0;
   }
 
   caption {
-    font-size: .9em;
-    background: color('secondary');
+    font-size: 0.9em;
+    background: a_color("secondary");
   }
 
-  td, th {
-    padding: .35em .75em;
+  td,
+  th {
+    padding: 0.35em 0.75em;
     vertical-align: top;
-    font-size: .9em;
-    border: 1px solid color('invisible');
+    font-size: 0.9em;
+    border: 1px solid a_color("invisible");
     border-top: 0;
     border-left: 0;
 
     &:first-child {
       padding-left: 0;
-      background-image: linear-gradient(to right, rgba(color('secondary'), 1) 50%, rgba(color('secondary'), 0) 100%);
+      background-image: linear-gradient(to right,
+          rgba(a_color("secondary"), 1) 50%,
+          rgba(a_color("secondary"), 0) 100%);
       background-size: 2px 100%;
       background-repeat: no-repeat;
     }
@@ -478,36 +530,51 @@ table {
     &:last-child {
       padding-right: 0;
       border-right: 0;
-      background-image: linear-gradient(to left, rgba(color('secondary'), 1) 50%, rgba(color('secondary'), 0) 100%);
+      background-image: linear-gradient(to left,
+          rgba(a_color("secondary"), 1) 50%,
+          rgba(a_color("secondary"), 0) 100%);
       background-position: 100% 0;
       background-size: 2px 100%;
       background-repeat: no-repeat;
     }
 
     &:only-child {
-      background-image: linear-gradient(to right, rgba(color('secondary'), 1) 50%, rgba(color('secondary'), 0) 100%), linear-gradient(to left, rgba(color('secondary'), 1) 50%, rgba(color('secondary'), 0) 100%);
-      background-position: 0 0, 100% 0;
-      background-size: 2px 100%, 2px 100%;
+      background-image: linear-gradient(to right,
+          rgba(a_color("secondary"), 1) 50%,
+          rgba(a_color("secondary"), 0) 100%),
+        linear-gradient(to left,
+          rgba(a_color("secondary"), 1) 50%,
+          rgba(a_color("secondary"), 0) 100%);
+      background-position:
+        0 0,
+        100% 0;
+      background-size:
+        2px 100%,
+        2px 100%;
       background-repeat: no-repeat, no-repeat;
     }
   }
 
   th {
-    line-height: size('line-height-min');
+    line-height: size("line-height-min");
   }
 }
 
 //- Code
 
-code, kbd, var, samp {
-  font-family: font('mono');
+code,
+kbd,
+var,
+samp {
+  font-family: font("mono");
   font-style: normal;
-  font-size: 0.80em;
-  background-color: color('invisible');
+  font-size: 0.8em;
+  background-color: a_color("invisible");
 }
 
 pre {
-  $scrollBorderColor: rgba(color('primary'), .15);
+  $scrollBorderColor: a_color("primary_50pc");
+  /* $scrollBorderColor: rgba(color('primary'), .15); */
   // padding: 0.5rem;
 
   overflow-x: auto;
@@ -516,19 +583,21 @@ pre {
     linear-gradient($scrollBorderColor 0%, $scrollBorderColor 100%) 0 0,
     linear-gradient($scrollBorderColor 0%, $scrollBorderColor 100%) 100% 0;
   background-attachment: scroll, scroll;
-  background-size: 1px 100%, 1px 100%;
+  background-size:
+    1px 100%,
+    1px 100%;
   background-repeat: no-repeat, no-repeat;
   background-color: #fdfaf1;
 
-  > code {
+  >code {
     display: inline-block;
     padding: 1rem;
     overflow-x: visible;
     box-sizing: border-box;
     background-color: transparent;
     min-width: 100%;
-    border-right: 3px solid color('secondary'); // 3px 'cause of bad chrome rendering
-    border-left: 1px solid color('secondary');
+    border-right: 3px solid a_color("secondary"); // 3px 'cause of bad chrome rendering
+    border-left: 1px solid a_color("secondary");
   }
 }
 
@@ -538,15 +607,15 @@ hr {
   height: 1px;
   margin: 2em 0;
   border: 0;
-  background: color('invisible');
+  background: a_color("invisible");
 }
 
 details {
   margin: 1em 0;
 
   &[open] {
-    padding-bottom: .5em;
-    border-bottom: 1px solid color('invisible');
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid a_color("invisible");
   }
 }
 
@@ -562,9 +631,9 @@ summary {
 }
 
 noscript {
-  color: color('alarm');
+  color: a_color("alarm");
 }
 
 ::selection {
-  background: rgba(color('accent'), .15);
+  background: rgba(a_color("accent"), 0.15);
 }

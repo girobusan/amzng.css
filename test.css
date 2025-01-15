@@ -65,7 +65,7 @@ html {
   font-size: 100%;
   line-height: 1.6;
   background: rgb(255, 255, 255);
-  color: #444;
+  color: rgb(68, 68, 68);
   -webkit-overflow-scrolling: touch;
 }
 
@@ -177,8 +177,7 @@ p img.fit {
 p img + small,
 p img + em {
   display: inline-block;
-  /* color: a_color("primary_light"); */
-  color: #777777;
+  color: rgb(105.4, 105.4, 105.4);
   font-size: 0.8em;
   line-height: 110%;
 }
@@ -281,7 +280,7 @@ aside {
     margin: 0;
     padding-left: 0.5em;
     font-size: 0.8em;
-    border-left: 1px solid rgb(230, 230, 230);
+    border-left: 1px solid #f2f2f0;
   }
 }
 aside:first-child {
@@ -372,7 +371,7 @@ h6 > a[href^="#"][id] {
   left: -0.5em;
   opacity: 0;
   background: none;
-  color: rgba(68, 68, 68, 0.5);
+  color: rgb(161.5, 161.5, 161.5);
   transition: opacity 300ms ease-out;
 }
 h1 > a[href^="#"][id]:target, h1 > a[href^="#"][id]:hover, h1 > a[href^="#"][id]:focus,
@@ -393,7 +392,7 @@ h6 > a[href^="#"][id]:hover,
 h6 > a[href^="#"][id]:focus {
   opacity: 1;
   box-shadow: none;
-  color: #444;
+  color: rgb(68, 68, 68);
   transition: opacity 0s, color 0s;
 }
 h1 > a[href^="#"][id]:target:focus,
@@ -463,25 +462,13 @@ article header h2 + p {
 }
 article header h1 a,
 article header h2 a {
-  color: #444;
-  background: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1" height="1"%3E%3Crect x="0" y="0.5" width="1" height="0.5" fill="rgba(68, 68, 68, 0.35)"/%3E%3C/svg%3E') left bottom repeat-x;
-}
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  article header h1 a,
-  article header h2 a {
-    background: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1" height="2"%3E%3Crect x="0" y="1" width="1" height="1" fill="rgba(68, 68, 68, 0.35)"/%3E%3C/svg%3E') left bottom repeat-x;
-  }
+  color: rgb(68, 68, 68);
+  /* @include retina-border(color("primary")); */
 }
 article header h1 a:visited,
 article header h2 a:visited {
   color: #aa9;
-  background: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1" height="1"%3E%3Crect x="0" y="0.5" width="1" height="0.5" fill="rgba(170, 170, 153, 0.35)"/%3E%3C/svg%3E') left bottom repeat-x;
-}
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  article header h1 a:visited,
-  article header h2 a:visited {
-    background: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1" height="2"%3E%3Crect x="0" y="1" width="1" height="1" fill="rgba(170, 170, 153, 0.35)"/%3E%3C/svg%3E') left bottom repeat-x;
-  }
+  /* @include retina-border(color("stealthy")); */
 }
 article header h1 a:visited:hover,
 article header h2 a:visited:hover {
@@ -496,16 +483,10 @@ a {
   text-decoration: none;
   color: #0064c1;
   transition: color 300ms ease-out, box-shadow 300ms ease-out;
-  background: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1" height="1"%3E%3Crect x="0" y="0.5" width="1" height="0.5" fill="rgba(0, 100, 193, 0.35)"/%3E%3C/svg%3E') left bottom repeat-x;
-}
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  a {
-    background: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1" height="2"%3E%3Crect x="0" y="1" width="1" height="1" fill="rgba(0, 100, 193, 0.35)"/%3E%3C/svg%3E') left bottom repeat-x;
-  }
+  /* @include retina-border(color("link")); */
 }
 a:visited {
-  /* color: a_color("link-visited"); */
-  color: rgb(127.5, 177.5, 224);
+  color: #6d00c1;
 }
 a:hover, a:active {
   outline-width: 0;
@@ -557,7 +538,7 @@ table {
   max-width: 100%;
   text-align: left;
   vertical-align: top;
-  background: linear-gradient(rgba(68, 68, 68, 0.15) 0%, rgba(68, 68, 68, 0.15) 100%) 0 0, linear-gradient(rgba(68, 68, 68, 0.15) 0%, rgba(68, 68, 68, 0.15) 100%) 100% 0;
+  background: linear-gradient(rgb(105.4, 105.4, 105.4) 0%, rgb(105.4, 105.4, 105.4) 100%) 0 0, linear-gradient(rgb(105.4, 105.4, 105.4) 0%, rgb(105.4, 105.4, 105.4) 100%) 100% 0;
   background-attachment: scroll, scroll;
   background-size: 1px 100%, 1px 100%;
   background-repeat: no-repeat, no-repeat;
@@ -578,14 +559,14 @@ table th {
   padding: 0.35em 0.75em;
   vertical-align: top;
   font-size: 0.9em;
-  border: 1px solid rgb(230, 230, 230);
+  border: 1px solid #f2f2f0;
   border-top: 0;
   border-left: 0;
 }
 table td:first-child,
 table th:first-child {
   padding-left: 0;
-  background-image: linear-gradient(to right, white 50%, rgba(255, 255, 255, 0) 100%);
+  background-image: linear-gradient(to right, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0) 100%);
   background-size: 2px 100%;
   background-repeat: no-repeat;
 }
@@ -593,14 +574,14 @@ table td:last-child,
 table th:last-child {
   padding-right: 0;
   border-right: 0;
-  background-image: linear-gradient(to left, white 50%, rgba(255, 255, 255, 0) 100%);
+  background-image: linear-gradient(to left, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0) 100%);
   background-position: 100% 0;
   background-size: 2px 100%;
   background-repeat: no-repeat;
 }
 table td:only-child,
 table th:only-child {
-  background-image: linear-gradient(to right, white 50%, rgba(255, 255, 255, 0) 100%), linear-gradient(to left, white 50%, rgba(255, 255, 255, 0) 100%);
+  background-image: linear-gradient(to right, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0) 100%), linear-gradient(to left, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0) 100%);
   background-position: 0 0, 100% 0;
   background-size: 2px 100%, 2px 100%;
   background-repeat: no-repeat, no-repeat;
@@ -616,13 +597,12 @@ samp {
   font-family: Consolas, "Lucida Console", Monaco, monospace;
   font-style: normal;
   font-size: 0.8em;
-  background-color: rgb(230, 230, 230);
+  background-color: #f2f2f0;
 }
 
 pre {
-  /* $scrollBorderColor: rgba(color('primary'), .15); */
   overflow-x: auto;
-  background: linear-gradient(0%, 100%) 0 0, linear-gradient(0%, 100%) 100% 0;
+  background: linear-gradient(rgb(161.5, 161.5, 161.5) 0%, rgb(161.5, 161.5, 161.5) 100%) 0 0, linear-gradient(rgb(161.5, 161.5, 161.5) 0%, rgb(161.5, 161.5, 161.5) 100%) 100% 0;
   background-attachment: scroll, scroll;
   background-size: 1px 100%, 1px 100%;
   background-repeat: no-repeat, no-repeat;
@@ -643,7 +623,7 @@ hr {
   height: 1px;
   margin: 2em 0;
   border: 0;
-  background: rgb(230, 230, 230);
+  background: #f2f2f0;
 }
 
 details {
@@ -651,7 +631,7 @@ details {
 }
 details[open] {
   padding-bottom: 0.5em;
-  border-bottom: 1px solid rgb(230, 230, 230);
+  border-bottom: 1px solid #f2f2f0;
 }
 
 summary {
@@ -668,6 +648,8 @@ noscript {
   color: #d00000;
 }
 
-::selection {
-  background: rgba(0, 100, 193, 0.15);
-}
+/* ::selection { */
+/*   background: rgba(a_color("accent"), 0.15); */
+/* } */
+
+/*# sourceMappingURL=test.css.map */
