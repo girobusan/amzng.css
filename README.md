@@ -1,6 +1,5 @@
-amzng.css
-=========
+# amzng.css
 
-My fork of awsm.css 2.1.0
+My fork of awsm.css 2.1.0. Clean stylesheet for textual content with nice typography.
 
-([ awsm.css README ](README.awsm.md))
+Unfortunately, original repo is lost.
