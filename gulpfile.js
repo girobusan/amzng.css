@@ -8,8 +8,8 @@ async function buildCSS() {
   return src("dev/scss/amzng.scss")
     .pipe(sourcemaps.init())
     .pipe(sass().on("error", sass.logError))
-    .pipe(sourcemaps.write("."))
     .pipe(dest("dist/"))
+    .pipe(sourcemaps.write("."))
     .pipe(dest("css/"));
 }
 

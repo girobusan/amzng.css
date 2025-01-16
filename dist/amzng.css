@@ -1,6 +1,353 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=PT+Serif+Caption:ital@0;1&display=swap");
+form {
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 40rem) {
+  form {
+    max-width: 80%;
+  }
+}
+
+form select,
+form label {
+  display: block;
+}
+
+form label:not(:first-child) {
+  margin-top: 1em;
+}
+
+form p label {
+  display: inline;
+}
+
+form p label + label {
+  margin-left: 1em;
+}
+
+form legend:first-child + label {
+  margin-top: 0;
+}
+
+form select,
+form input[type],
+form textarea {
+  margin-bottom: 1em;
+}
+
+form input[type=checkbox],
+form input[type=radio] {
+  margin-bottom: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0.5em 1em;
+  border: 1px solid #aa9;
+}
+
+legend {
+  color: #aaaaaa;
+}
+
+button {
+  outline: none;
+  box-sizing: border-box;
+  height: 2em;
+  margin: 0;
+  padding: calc(0.25em - 1px) 0.5em;
+  font-family: inherit;
+  font-size: 1em;
+  border: 1px solid #aaaaaa;
+  border-radius: 2px;
+  background: white;
+  color: black;
+  display: inline-block;
+  width: auto;
+  background: #f2f2f2;
+  color: #444;
+  cursor: pointer;
+}
+
+button:focus {
+  border: 1px solid black;
+}
+
+button:not([disabled]):hover {
+  border: 1px solid black;
+}
+
+button:active {
+  background-color: #aaaaaa;
+}
+
+button[disabled] {
+  color: #aaaaaa;
+  cursor: not-allowed;
+}
+
+select {
+  outline: none;
+  box-sizing: border-box;
+  height: 2em;
+  margin: 0;
+  padding: calc(0.25em - 1px) 0.5em;
+  font-family: inherit;
+  font-size: 1em;
+  border: 1px solid #aaaaaa;
+  border-radius: 2px;
+  background: white;
+  color: black;
+  display: inline-block;
+  width: auto;
+  background: #f2f2f2;
+  color: black;
+  cursor: pointer;
+  padding-right: 1.2em;
+  background-position: top 55% right 0.35em;
+  background-size: 0.5em;
+  background-repeat: no-repeat;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Cpath fill='rgb(170, 170, 170)' fill-rule='nonzero' d='M1.5 2L3 0H0z'/%3E%3C/svg%3E");
+}
+
+select:focus {
+  border: 1px solid black;
+}
+
+select:not([disabled]):hover {
+  border: 1px solid black;
+}
+
+select:active {
+  background-color: #aaaaaa;
+}
+
+select[disabled] {
+  color: #aaaaaa;
+  cursor: not-allowed;
+}
+
+select:focus,
+select:hover {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Cpath fill='rgb(0, 0, 0)' fill-rule='nonzero' d='M1.5 2L3 0H0z'/%3E%3C/svg%3E");
+}
+
+input[type=text],
+input[type=password],
+input[type^=date],
+input[type=email],
+input[type=number],
+input[type=search],
+input[type=tel],
+input[type=time],
+input[type=month],
+input[type=week],
+input[type=url] {
+  outline: none;
+  box-sizing: border-box;
+  height: 2em;
+  margin: 0;
+  padding: calc(0.25em - 1px) 0.5em;
+  font-family: inherit;
+  font-size: 1em;
+  border: 1px solid #aaaaaa;
+  border-radius: 2px;
+  background: white;
+  color: black;
+  display: block;
+  width: 100%;
+  line-height: calc(2em - 2px - (0.25em - 1px) * 2);
+  appearance: none;
+}
+
+input[type=text]:focus,
+input[type=password]:focus,
+input[type^=date]:focus,
+input[type=email]:focus,
+input[type=number]:focus,
+input[type=search]:focus,
+input[type=tel]:focus,
+input[type=time]:focus,
+input[type=month]:focus,
+input[type=week]:focus,
+input[type=url]:focus {
+  border: 1px solid black;
+}
+input[type=text]::placeholder,
+input[type=password]::placeholder,
+input[type^=date]::placeholder,
+input[type=email]::placeholder,
+input[type=number]::placeholder,
+input[type=search]::placeholder,
+input[type=tel]::placeholder,
+input[type=time]::placeholder,
+input[type=month]::placeholder,
+input[type=week]::placeholder,
+input[type=url]::placeholder {
+  color: #aaaaaa;
+}
+
+input[type=submit],
+input[type=button],
+input[type=reset] {
+  outline: none;
+  box-sizing: border-box;
+  height: 2em;
+  margin: 0;
+  padding: calc(0.25em - 1px) 0.5em;
+  font-family: inherit;
+  font-size: 1em;
+  border: 1px solid #aaaaaa;
+  border-radius: 2px;
+  background: white;
+  color: black;
+  display: inline-block;
+  width: auto;
+  background: #f2f2f2;
+  color: black;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input[type=submit]:focus,
+input[type=button]:focus,
+input[type=reset]:focus {
+  border: 1px solid black;
+}
+
+input[type=submit]:not([disabled]):hover,
+input[type=button]:not([disabled]):hover,
+input[type=reset]:not([disabled]):hover {
+  border: 1px solid black;
+}
+
+input[type=submit]:active,
+input[type=button]:active,
+input[type=reset]:active {
+  background-color: #aaaaaa;
+}
+
+input[type=submit][disabled],
+input[type=button][disabled],
+input[type=reset][disabled] {
+  color: #aaaaaa;
+  cursor: not-allowed;
+}
+
+input[type=color] {
+  outline: none;
+  box-sizing: border-box;
+  height: 2em;
+  margin: 0;
+  padding: calc(0.25em - 1px) 0.5em;
+  font-family: inherit;
+  font-size: 1em;
+  border: 1px solid #aaaaaa;
+  border-radius: 2px;
+  background: white;
+  color: black;
+  display: block;
+  width: 100%;
+  line-height: calc(2em - 2px - (0.25em - 1px) * 2);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 6em;
+}
+input[type=color]:focus {
+  border: 1px solid black;
+}
+input[type=color]::placeholder {
+  color: #aaaaaa;
+}
+input[type=color]:hover {
+  border: 1px solid black;
+}
+
+input[type=file] {
+  outline: none;
+  box-sizing: border-box;
+  height: 2em;
+  margin: 0;
+  padding: calc(0.25em - 1px) 0.5em;
+  font-family: inherit;
+  font-size: 1em;
+  border: 1px solid #aaaaaa;
+  border-radius: 2px;
+  background: white;
+  color: black;
+  display: inline-block;
+  width: auto;
+  background: #f2f2f2;
+  color: black;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 0.75em 0.5em;
+  font-size: 12px;
+  line-height: 1;
+}
+
+input[type=file]:focus {
+  border: 1px solid black;
+}
+
+input[type=file]:not([disabled]):hover {
+  border: 1px solid black;
+}
+
+input[type=file]:active {
+  background-color: #aaaaaa;
+}
+
+input[type=file][disabled] {
+  color: #aaaaaa;
+  cursor: not-allowed;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  margin: -0.2em 0.75em 0 0;
+  vertical-align: middle;
+}
+
+textarea {
+  outline: none;
+  box-sizing: border-box;
+  height: 2em;
+  margin: 0;
+  padding: calc(0.25em - 1px) 0.5em;
+  font-family: inherit;
+  font-size: 1em;
+  border: 1px solid #aaaaaa;
+  border-radius: 2px;
+  background: white;
+  color: black;
+  display: block;
+  width: 100%;
+  line-height: calc(2em - 2px - (0.25em - 1px) * 2);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 4.5em;
+  resize: vertical;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+textarea:focus {
+  border: 1px solid black;
+}
+textarea::placeholder {
+  color: #aaaaaa;
+}
+
 pre code.hljs {
   display: block;
   overflow-x: auto;
@@ -671,4 +1018,3 @@ noscript {
 ::selection {
   background: rgba(0, 100, 193, 0.15);
 }
-/*# sourceMappingURL=amzng.css.map */
