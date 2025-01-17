@@ -92,6 +92,7 @@ main article {
   p,
   &>div,
   blockquote,
+  aside,
   audio,
   video,
   ul,
@@ -129,7 +130,7 @@ p img+small,
 p img+em {
   display: inline-block;
   /* color: a_color("primary_light"); */
-  color: color.adjust(a_color("primary"), $lightness: 20%);
+  color: a_color("stealthy");
   font-size: 0.75em;
   line-height: 110%;
   font-family: font("caption");
@@ -245,18 +246,23 @@ aside {
   margin: 0.5em 0;
   font-style: italic;
   color: a_color("stealthy");
+  font-size: 0.75em;
+  border-top: 1px solid a_color("invisible");
+  border-bottom: 1px solid a_color("invisible");
+  font-family: font("caption");
 
   $shift: 12.5rem; // 200px / 16px
 
   @media (min-width: size("width-max") + $shift * 2) {
     position: absolute;
-    right: -$shift;
+    left: calc(50% + size("width-max") / 2 + 1rem);
     width: $shift * 0.75;
     max-width: $shift * 0.75;
     margin: 0;
     padding-left: 0.5em;
-    font-size: 0.8em;
     border-left: 1px solid a_color("invisible");
+    border-top: none;
+    border-bottom: none;
   }
 
   &:first-child {

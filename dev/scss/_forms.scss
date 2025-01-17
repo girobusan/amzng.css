@@ -162,19 +162,7 @@ input[type="url"] {
   width: 100%;
   line-height: calc(2em - 1px * 2 - (0.25em - 1px) * 2);
   appearance: none;
-}
 
-input[type="text"],
-input[type="password"],
-input[type^="date"],
-input[type="email"],
-input[type="number"],
-input[type="search"],
-input[type="tel"],
-input[type="time"],
-input[type="month"],
-input[type="week"],
-input[type="url"] {
   &:focus {
     border: 1px solid black;
   }
@@ -206,31 +194,23 @@ input[type="reset"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-}
 
-input[type="submit"]:focus,
-input[type="button"]:focus,
-input[type="reset"]:focus {
-  border: 1px solid black;
-}
+  &:focus {
+    border: 1px solid black;
+  }
 
-input[type="submit"]:not([disabled]):hover,
-input[type="button"]:not([disabled]):hover,
-input[type="reset"]:not([disabled]):hover {
-  border: 1px solid black;
-}
+  &:not([disabled]):hover {
+    border: 1px solid black;
+  }
 
-input[type="submit"]:active,
-input[type="button"]:active,
-input[type="reset"]:active {
-  background-color: #aaaaaa;
-}
+  &:active {
+    background-color: #aaaaaa;
+  }
 
-input[type="submit"][disabled],
-input[type="button"][disabled],
-input[type="reset"][disabled] {
-  color: #aaaaaa;
-  cursor: not-allowed;
+  &[disabled] {
+    color: #aaaaaa;
+    cursor: not-allowed;
+  }
 }
 
 input[type="color"] {
@@ -289,23 +269,23 @@ input[type="file"] {
   padding: 0.75em 0.5em;
   font-size: 12px;
   line-height: 1;
-}
 
-input[type="file"]:focus {
-  border: 1px solid black;
-}
+  &:focus {
+    border: 1px solid black;
+  }
 
-input[type="file"]:not([disabled]):hover {
-  border: 1px solid black;
-}
+  &:not([disabled]):hover {
+    border: 1px solid black;
+  }
 
-input[type="file"]:active {
-  background-color: #aaaaaa;
-}
+  &:active {
+    background-color: #aaaaaa;
+  }
 
-input[type="file"][disabled] {
-  color: #aaaaaa;
-  cursor: not-allowed;
+  &[type="file"][disabled] {
+    color: #aaaaaa;
+    cursor: not-allowed;
+  }
 }
 
 input[type="checkbox"],

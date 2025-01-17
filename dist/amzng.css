@@ -163,7 +163,6 @@ input[type=url] {
   line-height: calc(2em - 2px - (0.25em - 1px) * 2);
   appearance: none;
 }
-
 input[type=text]:focus,
 input[type=password]:focus,
 input[type^=date]:focus,
@@ -214,25 +213,21 @@ input[type=reset] {
   -moz-appearance: none;
   appearance: none;
 }
-
 input[type=submit]:focus,
 input[type=button]:focus,
 input[type=reset]:focus {
   border: 1px solid black;
 }
-
 input[type=submit]:not([disabled]):hover,
 input[type=button]:not([disabled]):hover,
 input[type=reset]:not([disabled]):hover {
   border: 1px solid black;
 }
-
 input[type=submit]:active,
 input[type=button]:active,
 input[type=reset]:active {
   background-color: #aaaaaa;
 }
-
 input[type=submit][disabled],
 input[type=button][disabled],
 input[type=reset][disabled] {
@@ -294,20 +289,16 @@ input[type=file] {
   font-size: 12px;
   line-height: 1;
 }
-
 input[type=file]:focus {
   border: 1px solid black;
 }
-
 input[type=file]:not([disabled]):hover {
   border: 1px solid black;
 }
-
 input[type=file]:active {
   background-color: #aaaaaa;
 }
-
-input[type=file][disabled] {
+input[type=file][type=file][disabled] {
   color: #aaaaaa;
   cursor: not-allowed;
 }
@@ -476,6 +467,7 @@ main h5,
 main h6,
 main p, main > div,
 main blockquote,
+main aside,
 main audio,
 main video,
 main ul,
@@ -495,6 +487,7 @@ main article h6,
 main article p,
 main article > div,
 main article blockquote,
+main article aside,
 main article audio,
 main article video,
 main article ul,
@@ -526,7 +519,7 @@ p img + small,
 p img + em {
   display: inline-block;
   /* color: a_color("primary_light"); */
-  color: #777777;
+  color: #aa9;
   font-size: 0.75em;
   line-height: 110%;
   font-family: "PT Serif Caption", "PT Serif", Georgia, serif;
@@ -617,17 +610,22 @@ aside {
   margin: 0.5em 0;
   font-style: italic;
   color: #aa9;
+  font-size: 0.75em;
+  border-top: 1px solid rgb(230, 230, 230);
+  border-bottom: 1px solid rgb(230, 230, 230);
+  font-family: "PT Serif Caption", "PT Serif", Georgia, serif;
 }
 @media (min-width: 65rem) {
   aside {
     position: absolute;
-    right: -12.5rem;
+    left: calc(50% + 20rem + 1rem);
     width: 9.375rem;
     max-width: 9.375rem;
     margin: 0;
     padding-left: 0.5em;
-    font-size: 0.8em;
     border-left: 1px solid rgb(230, 230, 230);
+    border-top: none;
+    border-bottom: none;
   }
 }
 aside:first-child {
