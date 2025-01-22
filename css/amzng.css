@@ -63,11 +63,11 @@ button {
   font-size: 1em;
   border: 1px solid #aaa;
   border-radius: 2px;
-  background: rgb(255, 255, 255);
+  background: #fff;
   color: black;
   display: inline-block;
   width: auto;
-  background: rgb(230, 230, 230);
+  background: #e6e6e6;
   color: #444;
   cursor: pointer;
 }
@@ -103,14 +103,15 @@ select {
   color: black;
   display: inline-block;
   width: auto;
-  background: rgb(230, 230, 230);
+  background: #e6e6e6;
   color: black;
   cursor: pointer;
   padding-right: 1.2em;
   background-position: top 55% right 0.35em;
   background-size: 0.5em;
   background-repeat: no-repeat;
-  appearance: none;
+  -webkit-appearance: none;
+          appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Cpath fill='rgb(170, 170, 170)' fill-rule='nonzero' d='M1.5 2L3 0H0z'/%3E%3C/svg%3E");
 }
 
@@ -161,7 +162,8 @@ input[type=url] {
   display: block;
   width: 100%;
   line-height: calc(2em - 2px - (0.25em - 1px) * 2);
-  appearance: none;
+  -webkit-appearance: none;
+          appearance: none;
 }
 input[type=text]:focus,
 input[type=password]:focus,
@@ -175,6 +177,9 @@ input[type=month]:focus,
 input[type=week]:focus,
 input[type=url]:focus {
   border: 1px solid black;
+}
+input[type=text]:-ms-input-placeholder, input[type=password]:-ms-input-placeholder, input[type^=date]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder, input[type=number]:-ms-input-placeholder, input[type=search]:-ms-input-placeholder, input[type=tel]:-ms-input-placeholder, input[type=time]:-ms-input-placeholder, input[type=month]:-ms-input-placeholder, input[type=week]:-ms-input-placeholder, input[type=url]:-ms-input-placeholder {
+  color: #aaa;
 }
 input[type=text]::placeholder,
 input[type=password]::placeholder,
@@ -206,10 +211,11 @@ input[type=reset] {
   color: black;
   display: inline-block;
   width: auto;
-  background: rgb(230, 230, 230);
+  background: #e6e6e6;
   color: black;
   cursor: pointer;
-  appearance: none;
+  -webkit-appearance: none;
+          appearance: none;
 }
 input[type=submit]:focus,
 input[type=button]:focus,
@@ -248,11 +254,15 @@ input[type=color] {
   display: block;
   width: 100%;
   line-height: calc(2em - 2px - (0.25em - 1px) * 2);
-  appearance: none;
+  -webkit-appearance: none;
+          appearance: none;
   width: 6em;
 }
 input[type=color]:focus {
   border: 1px solid black;
+}
+input[type=color]:-ms-input-placeholder {
+  color: #aaa;
 }
 input[type=color]::placeholder {
   color: #aaa;
@@ -275,7 +285,7 @@ input[type=file] {
   color: black;
   display: inline-block;
   width: auto;
-  background: rgb(230, 230, 230);
+  background: #e6e6e6;
   color: black;
   cursor: pointer;
   display: block;
@@ -320,7 +330,8 @@ textarea {
   display: block;
   width: 100%;
   line-height: calc(2em - 2px - (0.25em - 1px) * 2);
-  appearance: none;
+  -webkit-appearance: none;
+          appearance: none;
   height: 4.5em;
   resize: vertical;
   padding-top: 0.5em;
@@ -328,6 +339,9 @@ textarea {
 }
 textarea:focus {
   border: 1px solid black;
+}
+textarea:-ms-input-placeholder {
+  color: #aaa;
 }
 textarea::placeholder {
   color: #aaa;
@@ -397,7 +411,7 @@ html {
   font-family: PT Serif, Georgia, serif;
   font-size: 100%;
   line-height: 1.6;
-  background: rgb(255, 255, 255);
+  background: #fff;
   color: #444;
   -webkit-overflow-scrolling: touch;
 }
@@ -525,26 +539,32 @@ body > footer > * {
   margin-right: auto;
 }
 
-nav {
-  margin: 1em 0;
-}
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-nav li {
-  display: inline-block;
-  margin-right: 1em;
-  margin-bottom: 0.25em;
-}
-nav a:visited {
-  color: #0064c1;
-}
-nav a:hover {
-  color: #3000c1;
-}
-
+/* nav { */
+/*   margin: 1em 0; */
+/**/
+/*   ul { */
+/*     list-style: none; */
+/*     margin: 0; */
+/*     padding: 0; */
+/*   } */
+/**/
+/*   li { */
+/*     display: inline-block; */
+/*     margin-right: 1em; */
+/*     margin-bottom: 0.25em; */
+/*     //markdown checklist */
+/*   } */
+/**/
+/*   a { */
+/*     &:visited { */
+/*       color: a_color("link"); */
+/*     } */
+/**/
+/*     &:hover { */
+/*       color: a_color("link-hover"); */
+/*     } */
+/*   } */
+/* } */
 ul,
 ol {
   margin-top: 0;
@@ -568,7 +588,9 @@ main article > div:last-child {
 
 p {
   margin: 1em auto;
-  hyphens: auto;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
 p:first-child {
   margin-top: 0;
@@ -605,8 +627,8 @@ aside {
   font-style: italic;
   color: #aaa;
   font-size: 0.75em;
-  border-top: 1px solid rgb(230, 230, 230);
-  border-bottom: 1px solid rgb(230, 230, 230);
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
   font-family: "PT Serif Caption", "PT Serif", Georgia, serif;
 }
 @media (min-width: 65rem) {
@@ -617,7 +639,7 @@ aside {
     max-width: 9.375rem;
     margin: 0;
     padding-left: 0.5em;
-    border-left: 1px solid rgb(230, 230, 230);
+    border-left: 1px solid #e6e6e6;
     border-top: none;
     border-bottom: none;
   }
@@ -857,7 +879,9 @@ a:hover {
 
 abbr {
   margin-right: -0.075em;
-  hyphens: none;
+  -webkit-hyphens: none;
+      -ms-hyphens: none;
+          hyphens: none;
   letter-spacing: 0.075em;
   font-size: 0.9em;
 }
@@ -910,14 +934,14 @@ table {
 }
 table caption {
   font-size: 0.9em;
-  background: rgb(255, 255, 255);
+  background: #fff;
 }
 table td,
 table th {
   padding: 0.35em 0.75em;
   vertical-align: top;
   font-size: 0.9em;
-  border: 1px solid rgb(230, 230, 230);
+  border: 1px solid #e6e6e6;
   border-top: 0;
   border-left: 0;
 }
@@ -955,7 +979,7 @@ samp {
   font-family: Consolas, "Lucida Console", Monaco, monospace;
   font-style: normal;
   font-size: 0.8em;
-  background-color: rgb(230, 230, 230);
+  background-color: #e6e6e6;
   padding: 0 0.2em 0 0.2em;
 }
 
@@ -975,15 +999,15 @@ pre > code {
   box-sizing: border-box;
   background-color: transparent;
   min-width: 100%;
-  border-right: 3px solid rgb(255, 255, 255);
-  border-left: 1px solid rgb(255, 255, 255);
+  border-right: 3px solid #fff;
+  border-left: 1px solid #fff;
 }
 
 hr {
   height: 1px;
   margin: 2em 0;
   border: 0;
-  background: rgb(230, 230, 230);
+  background: #e6e6e6;
 }
 
 details {
@@ -991,7 +1015,7 @@ details {
 }
 details[open] {
   padding-bottom: 0.5em;
-  border-bottom: 1px solid rgb(230, 230, 230);
+  border-bottom: 1px solid #e6e6e6;
 }
 
 summary {
@@ -1011,4 +1035,3 @@ noscript {
 ::selection {
   background: rgba(0, 100, 193, 0.15);
 }
-/*# sourceMappingURL=amzng.css.map */
