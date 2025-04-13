@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>amzng.css — sample</title>
+  <meta name="description" content="amzng.css sample page">
+  <meta name="author" content="@girobusan">
+  <meta name="keywords" content="">
+  <meta name="og:title" content="amzng.css — sample">
+  <meta name="og:description" content="amzng.css sample page">
+  <meta name="og:image" content="undefined">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="undefined">
+  <link rel="icon" type="image/png" href="undefined">
+  <script>
+   window.settings = {
+  "title": "amzng.css — sample",
+  "description": "amzng.css sample page",
+  "filename": "sampler_short.html",
+  "footer": "&lt;div&gt;Powered by &lt;a href='https://github.com/girobusan/imp'&gt;IMP!&lt;/a&gt; &lt;/div&gt;",
+  "headHTML": "&lt;script src=\"styleswitch.js\" defer &gt;&lt;/script&gt;\n&lt;link rel=\"stylesheet\" href=\"styleswitch.css\" /&gt;",
+  "editor": "https://cdn.jsdelivr.net/gh/girobusan/imp@latest/dist/imp.js",
+  "viewCSS": "amzng.css",
+  "author": "@girobusan"
+};
+   window.savedWithImpVersion = "0.6.1"
+  </script>
+
+  <script defer>
+      (
+        function () {
+          function IMPEdit() {
+            console.info("Loading editor...")
+            const editor = document.createElement("script");
+            editor.id = "editorScript";
+            editor.src = window.settings.editor || "imp.js";
+            document.head.appendChild(editor);
+          }
+         var S = window.location.search.toLowerCase();
+          if (S.indexOf("mode=edit") != -1) {
+            IMPEdit();
+            return;
+          }
+          if (S.indexOf("mode=download") != -1) {
+            IMPEdit();
+            return;
+          }
+          if (window.location.protocol === "file:" &&
+            S.indexOf("mode=view") == -1) {
+            IMPEdit();
+          }
+        }
+      )();
+</script>
+
+  
+  <link id = "viewCSS" rel="stylesheet" href="amzng.css">
+  <style id="customCSS"></style>
+  <!--custom html here-->
+</head>
+<body>
+<main class="container" id="pageMain"><h1>IMP! Themes sampler:</h1>
+<p>velit` esse cillum dolore eu fugiat nulla pariatur. <em>Excepteur</em> sint occaecat cupidatat <strong>non proident,</strong> sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</main>
+<footer id='pageFooter'><div>Powered by <a href='https://github.com/girobusan/imp'>IMP!</a> </div></footer>
+
+<script>window.impData={}</script>
+<script id="pageData" type="text/markdown">IMP! Themes sampler: 
+===================
+velit` esse cillum dolore eu fugiat nulla pariatur. *Excepteur* sint occaecat cupidatat **non proident,** sunt in culpa qui officia deserunt mollit anim id est laborum.	
+
+
+</script>
+</body>
+</html>

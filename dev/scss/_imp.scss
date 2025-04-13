@@ -1,0 +1,30 @@
+main#pageMain {
+  margin-top: -1px;
+  margin-bottom: 0;
+  padding-bottom: 2rem;
+}
+
+footer#pageFooter {
+  padding-top: 2rem;
+  margin-top: 0;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  /* display: table; */
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+
+  main#pageMain {
+    flex-grow: 1;
+  }
+}
